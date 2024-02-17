@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Color Manipulator</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anta&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <aside>
+      <div class="filters">
+        <h3>RGBA:</h3>
+
+        <button>
+          <label for="red">Vermelho</label>
+          <input type="range" id="red" min="0" max="10" value="1" step="0.1" />
+        </button>
+
+        <button>
+          <label for="blue">Azul</label>
+          <input type="range" id="blue" min="0" max="10" value="1" step="0.1" />
+        </button>
+        <button>
+          <label for="green">Verde</label>
+          <input
+            type="range"
+            id="green"
+            min="0"
+            max="10"
+            value="1"
+            step="0.1"
+          />
+        </button>
+        <button>
+          <label for="alpha">Opacidade</label>
+          <input type="range" id="alpha" min="0" max="1" step="0.1" value="1" />
+        </button>
+
+        <h3>Filtros:</h3>
+        <button onclick="negative(1)">
+          <label for="negative">Negativo</label>
+
+          <input
+            type="range"
+            id="negative"
+            min="0"
+            max="1"
+            value="1"
+            step="0.1"
+          />
+        </button>
+        <button onclick="threshold(125)">
+          <label for="threshold">Threshold</label>
+
+          <input
+            type="range"
+            id="threshold"
+            min="0"
+            max="255"
+            value="1"
+            step="1"
+          />
+        </button>
+        <button onclick="greyScale(1)">
+          <label for="greyScale">Escala de Cinza</label>
+
+          <input
+            type="range"
+            id="greyScale"
+            min="0"
+            max="1"
+            value="1"
+            step="0.1"
+          />
+        </button>
+      </div>
+      <button onclick="resetImage()">Resetar</button>
+      <button onclick="downloadImage()">Download</button>
+      <input type="file" id="image-input" accept="image/jpeg image/png" />
+    </aside>
+
+    <canvas id="canvas"></canvas>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
